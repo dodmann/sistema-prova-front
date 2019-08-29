@@ -7,12 +7,16 @@ import { AssuntoComponent } from './assunto/assunto.component';
 import { QuestaoComponent } from './questao/questao.component';
 import { DisciplinaComponent } from './disciplina/disciplina.component';
 
+// Componente de Paginação
+import { JwPaginationComponent } from 'jw-angular-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
     AssuntoComponent,
     QuestaoComponent,
-    DisciplinaComponent
+    DisciplinaComponent,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,

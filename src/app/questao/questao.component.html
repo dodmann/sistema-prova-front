@@ -1,1 +1,22 @@
-<p>questao works!</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Questão</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of pageOfItems">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.name}}</td>
+                <td colspan="2">
+                    <i class="fas fa-pen pr-4"></i>
+                    <i class="fas fa-trash"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>

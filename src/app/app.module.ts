@@ -9,6 +9,8 @@ import { DisciplinaComponent } from './disciplina/disciplina.component';
 
 // Componente de Paginação
 import { JwPaginationComponent } from 'jw-angular-pagination';
+import { HomeComponent } from './home/home.component';
+import { ViewComponent } from './questao/view/view.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
     AssuntoComponent,
     QuestaoComponent,
     DisciplinaComponent,
-    JwPaginationComponent
+    JwPaginationComponent,
+    HomeComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

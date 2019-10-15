@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-assunto',
-  templateUrl: './assunto.component.html',
-  styleUrls: ['./assunto.component.css']
+  selector: 'app-listar',
+  templateUrl: './listar.component.html',
+  styleUrls: ['./listar.component.css']
 })
-export class AssuntoComponent implements OnInit {
+export class ListarComponent implements OnInit {
 
   items = [];
   pageOfItems: Array<any>;

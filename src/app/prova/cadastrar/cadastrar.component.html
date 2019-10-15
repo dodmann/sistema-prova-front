@@ -1,0 +1,56 @@
+<h1>Cadastrar nova Prova</h1>
+
+<div (click)="$event.preventDefault()">
+    <tabset>
+        <tab heading="Questões">
+            <form class="p-3">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputDisciplina">Disciplina</label>
+                        <input [(ngModel)]="nani" name="inputDisciplina" [typeahead]="select1" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAssunto">Assunto</label>
+                        <input [(ngModel)]="supernani" name="inputAssunto" [typeahead]="select2" class="form-control">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="input">Título da Questão</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Questão X, Y, Z do concurso X, Y, Z">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputTipoQuestao">Tipo da Questão</label>
+                        <select id="inputTipoQuestao" class="form-control">
+                            <option selected>Selecione...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputDificuldade">Dificuldade</label>
+                        <select id="inputDificuldade" class="form-control">
+                            <option selected>Fácil</option>
+                            <option>Médio</option>
+                            <option>Difícil</option>
+                            <option>Nishi</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="corpoQuestaoTextarea">Corpo da Questão</label>
+                        <textarea class="form-control" id="corpoQuestaoTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="comentariosTextarea">Comentários</label>
+                        <textarea class="form-control" id="comentariosTextarea" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </tab>
+        <tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (selectTab)="tabz.active = true"
+            (deselect)="tabz.active = false" [disabled]="tabz.disabled" [removable]="tabz.removable"
+            (removed)="removeTabHandler(tabz)" [customClass]="tabz.customClass">
+            {{tabz?.content}}
+        </tab>
+    </tabset>
+</div>

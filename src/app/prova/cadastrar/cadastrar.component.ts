@@ -49,10 +49,14 @@ export class CadastrarComponent{
       distrator2: ['', Validators.required],
       distrator3: ['', Validators.required],
       distrator4: ['', Validators.required],
+      inputDisciplina: ['', Validators.required],
+      inputAssunto: ['', Validators.required],
     });
   }
 
   salvar() {
+    console.log('pitombinhas');
+    
   }
 
 }

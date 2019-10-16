@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AssuntoComponent } from './assunto/assunto.component';
-import { QuestaoComponent } from './questao/questao.component';
-import { DisciplinaComponent } from './disciplina/disciplina.component';
-
+import { HomeComponent } from './home/home.component';
+import { CadastrarComponent } from './questao/cadastrar/cadastrar.component';
 
 const routes: Routes = [
-  { path: 'assunto', component: AssuntoComponent },
-  { path: 'questao', component: QuestaoComponent },
-  { path: 'disciplina', component: DisciplinaComponent },
+  { path: '', component: HomeComponent},
+  {
+    path: 'cadastrar_questao',
+    component: CadastrarComponent,
+    outlet: 'cadastrar_questao'
+  }
 ];
 
 @NgModule({

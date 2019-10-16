@@ -11,5 +11,4 @@ export class QuestaoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

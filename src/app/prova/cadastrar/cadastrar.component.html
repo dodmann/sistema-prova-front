@@ -7,15 +7,36 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputDisciplina">Disciplina</label>
-                        <input [(ngModel)]="nani" name="inputDisciplina" [typeahead]="select1" class="form-control">
+                        <div class="input-group">
+                            <input [(ngModel)]="inputDisciplina" name="inputDisciplina" [typeahead]="select1"
+                                class="form-control border-right-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text border-left-0" id="inputGroupPrepend">
+                                    <a  href="" data-toggle="modal" data-target="#modalDisciplina">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputAssunto">Assunto</label>
-                        <input [(ngModel)]="supernani" name="inputAssunto" [typeahead]="select2" class="form-control">
+                        <div class="input-group">
+                            <input [(ngModel)]="inputAssunto" name="inputAssunto" [typeahead]="select2"
+                                class="form-control border-right-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text border-left-0" id="inputGroupPrepend">
+                                    <a href="" data-toggle="modal" data-target="#modalAssunto">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="input">Título da Questão</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Questão X, Y, Z do concurso X, Y, Z">
+                        <input type="text" class="form-control" id="inputAddress"
+                            placeholder="Questão X, Y, Z do concurso X, Y, Z">
                     </div>
                 </div>
                 <div class="form-row">
@@ -53,4 +74,67 @@
             {{tabz?.content}}
         </tab>
     </tabset>
+</div>
+
+<!-- Modal - Criar Disciplina -->
+<div class="modal fade" id="modalDisciplina" tabindex="-1" role="dialog" aria-labelledby="modalDisciplina"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDisciplina">Criar Disciplina</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body row">
+                <div class="form-group col-12">
+                    <label for="inputDisciplina">Nome da Disciplina</label>
+                    <input [(ngModel)]="inputDisciplina" name="inputDisciplina" class="form-control">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="selectAssunto">Assunto</label>
+                <select id="selectAssunto" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal - Criar Assunto -->
+<div class="modal fade" id="modalAssunto" tabindex="-1" role="dialog" aria-labelledby="modalAssunto" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAssunto">Criar Assunto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body row">
+                <div class="form-group col-12">
+                    <label for="inputAssunto">Nome do Assunto</label>
+                    <input [(ngModel)]="inputAssunto" name="inputAssunto" class="form-control">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="selectDisciplina">Disciplina</label>
+                <select id="selectDisciplina" class="form-control">
+                    <option selected>Selecione</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
 </div>

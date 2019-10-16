@@ -1,80 +1,91 @@
 <h1>Cadastrar nova Prova</h1>
-
 <div (click)="$event.preventDefault()">
-    <tabset>
-        <tab heading="Questões">
-            <form class="p-3">
+    <form class="p-3" [formGroup]="formulario">
+        <tabset #tabs>
+            <tab heading="Questões">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputDisciplina">Disciplina</label>
+                  <div class="form-group col-md-6">
+                    <label for="disciplina">Disciplina</label>
+                    <div class="input-group">                       
                         <div class="input-group">
-                            <input [(ngModel)]="inputDisciplina" name="inputDisciplina" [typeahead]="select1"
-                                class="form-control border-right-0">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text border-left-0" id="inputGroupPrepend">
-                                    <a  href="" data-toggle="modal" data-target="#modalDisciplina">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                </span>
-                            </div>
+                          <input formControlName="disciplina" [typeahead]="select1" class="form-control border-right-0">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text border-left-0" id="inputGroupPrepend">
+                                <a  href="" data-toggle="modal" data-target="#modalDisciplina">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </span>
+                          </div>
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputAssunto">Assunto</label>
-                        <div class="input-group">
-                            <input [(ngModel)]="inputAssunto" name="inputAssunto" [typeahead]="select2"
-                                class="form-control border-right-0">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text border-left-0" id="inputGroupPrepend">
-                                    <a href="" data-toggle="modal" data-target="#modalAssunto">
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                </span>
-                            </div>
+                        <label for="assunto">Assunto</label>
+                        <input formControlName="assunto" [typeahead]="select2" class="form-control">
+                       <div class="input-group-prepend">
+                            <span class="input-group-text border-left-0" id="inputGroupPrepend">
+                                <a href="" data-toggle="modal" data-target="#modalAssunto">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </span>
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="input">Título da Questão</label>
-                        <input type="text" class="form-control" id="inputAddress"
-                            placeholder="Questão X, Y, Z do concurso X, Y, Z">
+                              <label for="titulo">Título da Questão</label>
+                              <input type="text" class="form-control" formControlName="titulo"
+                                  placeholder="Questão X, Y, Z do concurso X, Y, Z">
                     </div>
-                </div>
+                  </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputTipoQuestao">Tipo da Questão</label>
-                        <select id="inputTipoQuestao" class="form-control">
-                            <option selected>Selecione...</option>
-                            <option>...</option>
+                        <label for="tipoQuestao">Tipo da Questão</label>
+                        <select formControlName="tipoQuestao" class="form-control" (change)="desabilitarAba()">
+                            <option value="objetiva">Objetiva</option>
+                            <option value="subjetiva">Subjetiva</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputDificuldade">Dificuldade</label>
-                        <select id="inputDificuldade" class="form-control">
-                            <option selected>Fácil</option>
+                        <label for="dificuldade">Dificuldade</label>
+                        <select formControlName="dificuldade" class="form-control">
+                            <option disabled selected value="">Selecione</option>
+                            <option>Fácil</option>
                             <option>Médio</option>
                             <option>Difícil</option>
                             <option>Nishi</option>
                         </select>
                     </div>
                     <div class="form-group col-12">
-                        <label for="corpoQuestaoTextarea">Corpo da Questão</label>
-                        <textarea class="form-control" id="corpoQuestaoTextarea" rows="3"></textarea>
+                        <label for="corpoQuestao">Corpo da Questão</label>
+                        <textarea class="form-control" formControlName="corpoQuestao" rows="3"></textarea>
                     </div>
                     <div class="form-group col-12">
-                        <label for="comentariosTextarea">Comentários</label>
-                        <textarea class="form-control" id="comentariosTextarea" rows="3"></textarea>
+                        <label for="comentarios">Comentários</label>
+                        <textarea class="form-control" formControlName="comentarios" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="opcaoCorreta">Opção Correta</label>
+                        <textarea class="form-control" formControlName="opcaoCorreta" rows="3"></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>
-        </tab>
-        <tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (selectTab)="tabz.active = true"
-            (deselect)="tabz.active = false" [disabled]="tabz.disabled" [removable]="tabz.removable"
-            (removed)="removeTabHandler(tabz)" [customClass]="tabz.customClass">
-            {{tabz?.content}}
-        </tab>
-    </tabset>
-</div>
+            </tab>
+            <tab heading="Respostas">
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="distrator1">Distrator 1</label>
+                        <textarea class="form-control" formControlName="distrator1" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="distrator1">Distrator 2</label>
+                        <textarea class="form-control" formControlName="distrator2" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="distrator3">Distrator 3</label>
+                        <textarea class="form-control" formControlName="distrator3" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="distrator4">Distrator 4</label>
+                        <textarea class="form-control" formControlName="distrator4" rows="3"></textarea>
+                    </div>
+                </div>
 
 <!-- Modal - Criar Disciplina -->
 <div class="modal fade" id="modalDisciplina" tabindex="-1" role="dialog" aria-labelledby="modalDisciplina"
@@ -136,5 +147,10 @@
                 <button type="button" class="btn btn-primary">Salvar</button>
             </div>
         </div>
+            </tab>
+        </tabset>
+    </form>
+    <div class="text-right">
+        <button type="button" (click)="salvar()" class="btn btn-primary text-right">Cadastrar</button>
     </div>
 </div>

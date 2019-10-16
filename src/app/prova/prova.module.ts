@@ -8,7 +8,7 @@ import { ProvaComponent } from './prova.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CadastrarComponent, ListarComponent, VisualizarComponent, ProvaComponent],
@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     TabsModule.forRoot(),
     BrowserAnimationsModule,
     TypeaheadModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProvaModule { }

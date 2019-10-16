@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Select2OptionData } from 'ng-select2';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar',
@@ -7,14 +8,17 @@ import { Select2OptionData } from 'ng-select2';
   templateUrl: './cadastrar.component.html',
   styleUrls: ['./cadastrar.component.css']
 })
-export class CadastrarComponent implements OnInit {
 
-  tabs: any[] = [
-    { title: 'Respostas', content: 'Respostas', disabled: true },
-  ];
+export class CadastrarComponent{
 
-  supernani: string;
-  nani: string;
+  @ViewChild('tabs', { static: false }) tabs: TabsetComponent;
+
+  desabilitarAba() {
+    this.tabs.tabs[1].disabled = this.formulario.controls.tipoQuestao.value == "objetiva";
+  }
+
+  formulario: FormGroup;
+
   select1: string[] = [
     'Alabama',
     'Alaska',
@@ -26,11 +30,29 @@ export class CadastrarComponent implements OnInit {
     'Connecticut',
     'Delaware',
   ];
-  
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.desabilitarAba();
   }
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {
+    this.formulario = this.formBuilder.group({
+      disciplina: ['', Validators.required],
+      assunto: ['', [Validators.required]],
+      titulo: ['', [Validators.required, Validators.minLength(10)]],
+      tipoQuestao: ['objetiva', Validators.required],
+      dificuldade: ['', Validators.required],
+      corpoQuestao: ['', Validators.required],
+      comentarios: ['', Validators.required],
+      opcaoCorreta: ['', Validators.required],
+      distrator1: ['', Validators.required],
+      distrator2: ['', Validators.required],
+      distrator3: ['', Validators.required],
+      distrator4: ['', Validators.required],
+    });
+  }
+
+  salvar() {
+  }
 
 }

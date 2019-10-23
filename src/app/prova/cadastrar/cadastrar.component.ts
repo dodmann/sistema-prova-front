@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-cadastrar',
@@ -18,6 +19,7 @@ export class CadastrarComponent{
   }
 
   formulario: FormGroup;
+  editor = ClassicEditor;
 
   select1: string[] = [
     'Alabama',
@@ -42,7 +44,7 @@ export class CadastrarComponent{
       titulo: ['', [Validators.required, Validators.minLength(10)]],
       tipoQuestao: ['objetiva', Validators.required],
       dificuldade: ['', Validators.required],
-      corpoQuestao: ['', Validators.required],
+      corpoQuestao: ['Teste de conteúdo', Validators.required],
       comentarios: ['', Validators.required],
       opcaoCorreta: ['', Validators.required],
       distrator1: ['', Validators.required],
@@ -55,8 +57,7 @@ export class CadastrarComponent{
   }
 
   salvar() {
-    console.log('pitombinhas');
-    
+    console.log(this.formulario.controls.corpoQuestao.value);
   }
 
 }

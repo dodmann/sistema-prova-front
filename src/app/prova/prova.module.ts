@@ -9,6 +9,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [CadastrarComponent, ListarComponent, VisualizarComponent, ProvaComponent],
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     TypeaheadModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CKEditorModule
   ]
 })
 export class ProvaModule { }

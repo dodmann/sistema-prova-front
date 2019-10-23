@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="corpoQuestao">Corpo da Questão</label>
-                        <textarea class="form-control" formControlName="corpoQuestao" rows="3"></textarea>
+                        <ckeditor [editor]="editor" formControlName="corpoQuestao"></ckeditor>
                     </div>
                     <div class="form-group col-12">
                         <label for="comentarios">Comentários</label>
@@ -72,19 +72,19 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="distrator1">Distrator 1</label>
-                        <textarea class="form-control" formControlName="distrator1" rows="3"></textarea>
+                        <ckeditor [editor]="editor" formControlName="distrator1"></ckeditor>
                     </div>
                     <div class="form-group col-12">
                         <label for="distrator1">Distrator 2</label>
-                        <textarea class="form-control" formControlName="distrator2" rows="3"></textarea>
+                        <ckeditor [editor]="editor" formControlName="distrator2"></ckeditor>
                     </div>
                     <div class="form-group col-12">
                         <label for="distrator3">Distrator 3</label>
-                        <textarea class="form-control" formControlName="distrator3" rows="3"></textarea>
+                        <ckeditor [editor]="editor" formControlName="distrator3"></ckeditor>
                     </div>
                     <div class="form-group col-12">
                         <label for="distrator4">Distrator 4</label>
-                        <textarea class="form-control" formControlName="distrator4" rows="3"></textarea>
+                        <ckeditor [editor]="editor" formControlName="distrator4"></ckeditor>
                     </div>
                 </div>        
             </tab>

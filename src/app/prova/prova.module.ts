@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [CadastrarComponent, ListarComponent, VisualizarComponent, ProvaComponent],
@@ -21,7 +22,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     TypeaheadModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
+    PaginationModule.forRoot()
   ]
 })
 export class ProvaModule { }

@@ -11,18 +11,23 @@ export class ListarComponent implements OnInit {
 
   constructor() { }
 
-  contentArray = new Array(30).fill(new Questao());
+  contentArray: Array<Questao>;
   returnedArray: Questao[];
 
   ngOnInit(): void {
+    this.contentArray = [null, null, null, null, null, null, null, null, null, null];
+    this.contentArray.push(null, null, null, null, null, null, null, null, null, null);
+    this.contentArray.push(null, null, null, null, null, null, null, null, null, null);
     let i = 0;
-    this.contentArray.forEach((questao: Questao) => {
-      questao.id = i++
-      questao.nome = "Questão de número " + i
+    this.contentArray = this.contentArray.map(() => {
+      let questao = new Questao();
+      i++;
+      // console.log(i);
+      questao.id = i;
+      questao.nome = "Questão de número lorem ipsum dolor sit amet etc etc etc etc" + i;
+      return questao;
     });
-    console.log(this.contentArray);
     this.returnedArray = this.contentArray.slice(0, 10);
-    console.log(this.returnedArray);
   }
 
   pageChanged(event: PageChangedEvent): void {

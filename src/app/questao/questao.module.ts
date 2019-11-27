@@ -7,7 +7,6 @@ import { QuestaoComponent } from './questao.component';
 import { QuestaoRoutingModule } from './questao-routing.module';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
-
 @NgModule({
   declarations: [CadastrarComponent, ListarComponent, VisualizarComponent, QuestaoComponent],
   imports: [

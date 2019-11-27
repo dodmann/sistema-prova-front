@@ -5,12 +5,14 @@ import { ListarComponent } from './listar/listar.component';
 import { AssuntoComponent } from './assunto/assunto.component';
 import { DisciplinaRoutingModule } from './disciplina-routing.module';
 import { DisciplinaComponent } from './disciplina.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [CadastrarComponent, ListarComponent, AssuntoComponent, DisciplinaComponent],
   imports: [
     CommonModule,
-    DisciplinaRoutingModule
+    DisciplinaRoutingModule,
+    PaginationModule.forRoot()
   ]
 })
 export class DisciplinaModule { }

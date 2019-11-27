@@ -8,5 +8,5 @@ https://nodejs.org/en/download/
 
 ## Servidor de desenvolvimento
 
-Para execução do código, use o comando `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para execução do código, use o comando `ng serve`. Para visualização, navegue para o endereço `http://localhost:4200/`.
 

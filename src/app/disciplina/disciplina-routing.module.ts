@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DisciplinaComponent } from './disciplina.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ListarComponent } from './listar/listar.component';
-
+import { VisualizarComponent } from './visualizar/visualizar.component';
 
 const routes: Routes = [
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
       {
         path: 'listar',
         component: ListarComponent
+      },
+      {
+        path: 'visualizar',
+        component: VisualizarComponent
       },
     ]
   }

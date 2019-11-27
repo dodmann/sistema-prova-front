@@ -6,9 +6,10 @@ import { AssuntoComponent } from './assunto/assunto.component';
 import { DisciplinaRoutingModule } from './disciplina-routing.module';
 import { DisciplinaComponent } from './disciplina.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { VisualizarComponent } from './visualizar/visualizar.component';
 
 @NgModule({
-  declarations: [CadastrarComponent, ListarComponent, AssuntoComponent, DisciplinaComponent],
+  declarations: [CadastrarComponent, ListarComponent, AssuntoComponent, DisciplinaComponent, VisualizarComponent],
   imports: [
     CommonModule,
     DisciplinaRoutingModule,
